@@ -6,16 +6,16 @@ parser = argparse.ArgumentParser(
 # image
 parser.add_argument('img', help='A required image path.')
 # resolution
-parser.add_argument('--width', nargs='?', type=int, default=22)
+parser.add_argument('--resolution', nargs='?', type=int, default=22)
 # how much of the original to destroy - higher is more destruction
 parser.add_argument('--density', nargs='?', type=int, default=3)
 # parse args
 args = parser.parse_args()
 img = Image.open(args.img)
-width = args.width
+width = args.resolution
 density = args.density
 
-# setup chunk size and block mapping
+# setup chunk size to define a grid for the image
 chunk_size = int(img.size[0] / width)
 # set height relative to width for non-square images
 height = int(img.size[1] / img.size[0] * width)
@@ -29,9 +29,11 @@ pixelated_img = Image.new(
 
 # split source image into chunks
 chunks = []
-for i in range(0, height, density):  # for each row
+# for each row
+for i in range(0, height, density):  # use density to skip chunks
     row = []
-    for j in range(0, width, density):  # for each column
+    # for each column
+    for j in range(0, width, density):  # use density to skip chunks
         left = j * chunk_size
         upper = i * chunk_size
         right = left + chunk_size
@@ -48,23 +50,15 @@ for row in chunks:
         x += chunk_size
     y += chunk_size
 
-# show final image
-pixelated_img.show()
+# scale source image to pixelated size
+shrunk_img = img.resize(pixelated_img.size, Image.ANTIALIAS)
 
+# put images side by side
+width_sum = sum([pixelated_img.size[0], shrunk_img.size[0]])
+height_max = max([pixelated_img.size[1], shrunk_img.size[1]])
+combined_img = Image.new('RGB', (width_sum, height_max))
+combined_img.paste(shrunk_img, [0, 0])
+combined_img.paste(pixelated_img, [shrunk_img.size[0], 0])
 
-def show_side_by_side(scale=1):
-
-    # scale pixelated image
-    pixelated_img = pixelated_img.resize(
-        map(lambda x: x * scale, pixelated_img.size), Image.ANTIALIAS)
-
-    # scale source image
-    shrunk_img = img.resize(pixelated_img.size, Image.ANTIALIAS)
-
-    # show images side by side
-    width_sum = sum([pixelated_img.size[0], shrunk_img.size[0]])
-    height_max = max([pixelated_img.size[1], shrunk_img.size[1]])
-    combined_img = Image.new('RGB', (width_sum, height_max))
-    combined_img.paste(shrunk_img, [0, 0])
-    combined_img.paste(pixelated_img, [shrunk_img.size[0], 0])
-    combined_img.show()
+combined_img.save('combined.png') # save combined image
+# pixelated_img.save('pixelated.png') # save pixelated image
