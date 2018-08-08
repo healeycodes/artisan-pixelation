@@ -1,0 +1,2 @@
+python .\main.py .\george-washington.jpg --width 28
+python .\main.py .\mona.jpg
