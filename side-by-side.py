@@ -61,4 +61,5 @@ combined_img.paste(shrunk_img, [0, 0])
 combined_img.paste(pixelated_img, [shrunk_img.size[0], 0])
 
 combined_img.save('combined.png') # save combined image
-# pixelated_img.save('pixelated.png') # save pixelated image
+# pixelated_img.save('pixelated.png')  # save pixelated image
+# combined_img.show()  # open temporary image
