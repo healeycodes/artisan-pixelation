@@ -2,7 +2,7 @@
 
 <br>
 
-Inspired by Kensuke Koike's real life pixelation art, this script which performs an approximation of his [Avatar](https://www.youtube.com/watch?v=U1KiC0AXhHg) piece.
+Inspired by Kensuke Koike's real life pixelation art, this program which performs an approximation of his [Avatar](https://www.youtube.com/watch?v=U1KiC0AXhHg) piece.
 
 ![Avatar by Koike](https://github.com/healeycodes/artisan-pixelation/blob/master/images/avatar-kensuke-koike.png)
 
