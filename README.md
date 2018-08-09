@@ -8,9 +8,9 @@ Inspired by Kensuke Koike's real life pixelation art, this script which performs
 
 * The first argument should be an image.
 * `--resolution` is how many blocks you want to break the image into
-* `--density` is how little of the image you want to remain, higher is more destruction.
+* `--density` is how little of the image you want to remain - higher is more destruction.
 
-The resulting image will be saved as `combined.png`. You can use `Image.show()` for testing and a temporary image will be opened in a default program.
+The resulting image will be saved as `combined.png`. You can use `Image.show()` for testing and a temporary image will be opened in a default program. See the [Pillow docs](https://pillow.readthedocs.io/en/5.2.x/) for more. Only tested with Python 3.5 and up.
 
 ### Examples
 
