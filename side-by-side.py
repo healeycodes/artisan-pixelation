@@ -30,10 +30,10 @@ pixelated_img = Image.new(
 # split source image into chunks
 chunks = []
 # for each row
-for i in range(0, height, density):  # use density to skip chunks
+for i in range(0, height, density):
     row = []
     # for each column
-    for j in range(0, width, density):  # use density to skip chunks
+    for j in range(0, width, density):
         left = j * chunk_size
         upper = i * chunk_size
         right = left + chunk_size
