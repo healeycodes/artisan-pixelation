@@ -4,7 +4,7 @@
 
 Inspired by Kensuke Koike's real life pixelation art, this script which performs an approximation of his [Avatar](https://www.youtube.com/watch?v=U1KiC0AXhHg) piece.
 
-![Avatar by Koike](https://github.com/healeycodes/artisan-pixelation/blob/master/avatar-kensuke-koike.png)
+![Avatar by Koike](https://github.com/healeycodes/artisan-pixelation/blob/master/images/avatar-kensuke-koike.png)
 
 * `pip install requirements.txt`
 * `python side-by-side.py image.png` The first argument should be an image.
@@ -17,15 +17,15 @@ The resulting image will be saved as `combined.png`. You can use `Image.show()` 
 
 1.
 
-![George Washington](https://github.com/healeycodes/artisan-pixelation/blob/master/g-wash-processed.png)
+![George Washington](https://github.com/healeycodes/artisan-pixelation/blob/master/images/g-wash-processed.png)
 
 2.
 
-![Girl With a Pearl Earing](https://github.com/healeycodes/artisan-pixelation/blob/master/girl-processed.png)
+![Girl With a Pearl Earing](https://github.com/healeycodes/artisan-pixelation/blob/master/images/girl-processed.png)
 
 3.
 
-![Mona Lisa](https://github.com/healeycodes/artisan-pixelation/blob/master/mona-processed.png)
+![Mona Lisa](https://github.com/healeycodes/artisan-pixelation/blob/master/images/mona-processed.png)
 
 <br>
 
