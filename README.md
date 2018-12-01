@@ -7,7 +7,7 @@ Inspired by Kensuke Koike's real life pixelation art, this program which perform
 ![Avatar by Koike](https://github.com/healeycodes/artisan-pixelation/blob/master/images/avatar-kensuke-koike.png)
 
 * `pip install requirements.txt`
-* `python side-by-side.py image.png` The first argument should be an image.
+* `python image.png side-by-side.py` The first argument should be an image.
 * `--resolution 22` (optional arg) How many blocks you want to break the image into
 * `--density 4` (optional arg) How little of the image you want to remain - higher is more destruction.
 
